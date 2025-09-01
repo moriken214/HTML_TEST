@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>表示ページ</title>
+  <script>
+    // ページ読み込み時にURLパラメータから message を取得して表示
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const msg = params.get("message");
+      document.getElementById("label").textContent = msg || "（未入力）";
+    }
+  </script>
+</head>
+<body>
+  <h2>表示ページ</h2>
+  <div>
+    <label>入力された内容: </label>
+    <span id="label"></span>
+  </div>
+  <br>
+  <button onclick="location.href='btn.html'">戻る</button>
+</body>
+</html>
